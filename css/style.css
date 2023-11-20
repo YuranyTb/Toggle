@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(35, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;/*Altura de la pantalla*/
+    transition: 0.5s;/*Para los efectos de cambio, para que no se vean bruscos*/
+    &.toggleBlanco{/*I comercial y la clase que voy a crear y la creo dentro del body - Clase agregada*/
+        background-color: aliceblue;
+    }
+}
+
+#toggle{
+    height: 160px;
+    width: 320px;
+    background-color: #1b1b1b;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),/*Sombra interna*/
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.1); 
+    position:relative;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    appearance: none;
+    border-radius: 160px;/*Redondo*/
+    &.toggleBlanco{/*I comercial y la clase que voy a crear y la creo dentro del body - Clase agregada*/
+        background-color: aliceblue;
+        box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),/*Sombra interna*/
+                    inset 0 2px 8px rgba(0, 0, 0, 0.1),
+                    inset 0 -4px 4px rgba(0, 0, 0, 0.1); 
+        .circulo{
+            left: 160px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),/*Sombra externa, desde el eje x*/
+            inset 4px 4px rgba(255, 255, 255, 1),/*Sombras internas*/
+            inset -4px 4px rgba(255, 255, 255, 1);     
+            background: linear-gradient(to bottom, aliceblue, #fafafa);
+        }
+    }
+}
+
+.circulo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    content: "";
+    background: linear-gradient(to bottom, #444, #222);/*Efecto gradiente, de abajo hacia arriba con los colores elegidos*/
+    border-radius: 50vh;/*Redondo*/
+    transform: scale(0.9);/*Transformo la escala, para que quede mas adentro del anterior contenedor*/
+    transition: 0.5s;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),/*Sombra externa, desde el eje x*/
+        inset 0 8px 8px rgba(255, 255, 255, 0.2),/*Sombras internas*/
+        inset 0 -4px 4px rgba(255, 255, 255, 0.2);        
+}
+
+
